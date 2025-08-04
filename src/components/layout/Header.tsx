@@ -4,16 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Menu, X, User, LogIn, Sparkles } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
 
   const navigation = [
-    { name: 'Ideas', href: '/ideas' },
-    { name: 'Features', href: '/features' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Community', href: '/community' },
-    { name: 'About', href: '/about' },
+    { name: t('ideas'), href: '/ideas' },
+    { name: t('about'), href: '/about' },
+    { name: t('pricing'), href: '/pricing' },
+    { name: t('contact'), href: '/contact' },
   ];
 
   return (
@@ -61,13 +63,14 @@ export function Header() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="hidden md:flex items-center space-x-4"
           >
+            <LanguageSwitcher />
             <button className="btn btn-ghost btn-sm">
               <LogIn className="w-4 h-4 mr-2" />
-              Sign In
+              {t('login')}
             </button>
             <button className="btn btn-primary btn-sm">
               <User className="w-4 h-4 mr-2" />
-              Get Started
+              {t('signup')}
             </button>
           </motion.div>
 
@@ -112,13 +115,16 @@ export function Header() {
                 </Link>
               ))}
               <div className="pt-4 pb-3 border-t border-gray-200">
+                <div className="px-3 py-2">
+                  <LanguageSwitcher />
+                </div>
                 <button className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">
                   <LogIn className="w-4 h-4 mr-2 inline" />
-                  Sign In
+                  {t('login')}
                 </button>
                 <button className="w-full text-left px-3 py-2 text-base font-medium text-primary-600 hover:bg-primary-50 rounded-md transition-colors duration-200 mt-2">
                   <User className="w-4 h-4 mr-2 inline" />
-                  Get Started
+                  {t('signup')}
                 </button>
               </div>
             </div>

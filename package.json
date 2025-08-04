@@ -63,6 +63,7 @@
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "next-i18next": "^15.2.0",
+    "next-intl": "^4.3.4",
     "next-seo": "^6.4.0",
     "node-cron": "^3.0.3",
     "nodemailer": "^6.9.7",

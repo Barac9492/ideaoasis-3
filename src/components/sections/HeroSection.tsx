@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Sparkles, Globe, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('');
+  const t = useTranslations('hero');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,9 +86,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
           >
-            <span className="gradient-text">Global Ideas</span>
-            <br />
-            <span className="text-gray-900">Korean Market</span>
+            <span className="gradient-text">{t('title')}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -96,8 +96,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Discover innovative business ideas from around the world and adapt them for the Korean market. 
-            Powered by our AI swarm technology for hands-off operation.
+            {t('subtitle')}
           </motion.p>
 
           {/* Search Bar */}
@@ -114,7 +113,7 @@ export function HeroSection() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for business ideas, industries, or keywords..."
+                  placeholder={t('searchPlaceholder')}
                   className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg"
                 />
                 <button
@@ -136,11 +135,11 @@ export function HeroSection() {
           >
             <button className="btn btn-primary btn-lg px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
               <Zap className="w-5 h-5 mr-2" />
-              Start Free Trial
+              {t('ctaPrimary')}
             </button>
             <button className="btn btn-outline btn-lg px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50 transition-all duration-200">
               <Globe className="w-5 h-5 mr-2" />
-              Browse Ideas
+              {t('ctaSecondary')}
             </button>
           </motion.div>
 

@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "title": "Global Ideas, Korean Market",
+    "subtitle": "Discover proven business concepts from around the world, expertly adapted for Korea's unique market landscape",
+    "searchPlaceholder": "Search for ideas...",
+    "ctaPrimary": "Start Exploring",
+    "ctaSecondary": "Learn How It Works"
+  },
+  "features": {
+    "title": "Why Choose Ideaoasis?",
+    "subtitle": "Powered by AI swarm technology for intelligent market adaptation",
+    "items": {
+      "aiSwarm": {
+        "title": "AI Swarm Intelligence",
+        "description": "Advanced AI agents work together to source, score, and adapt global ideas for Korea"
+      },
+      "koreanFocus": {
+        "title": "Korean Market Expertise",
+        "description": "Deep understanding of Korean culture, regulations, and business environment"
+      },
+      "handsOff": {
+        "title": "Hands-Off Operation",
+        "description": "90-95% automated with human review only for exceptional cases"
+      },
+      "moat": {
+        "title": "Compounding Moat",
+        "description": "Proprietary data and network effects create sustainable competitive advantage"
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "From global discovery to Korean market success",
+    "steps": {
+      "discovery": {
+        "title": "Global Discovery",
+        "description": "AI agents scan global markets for proven business concepts"
+      },
+      "scoring": {
+        "title": "Korean Feasibility Scoring",
+        "description": "Evaluate cultural fit, regulatory compliance, and market potential"
+      },
+      "adaptation": {
+        "title": "Korean Market Adaptation",
+        "description": "Transform ideas with local integrations (KakaoTalk, Naver, Korean payments)"
+      },
+      "community": {
+        "title": "Community & Feedback",
+        "description": "Korean entrepreneurs discuss, adapt, and validate ideas together"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Start free, scale as you grow",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "₩0",
+        "period": "/month",
+        "description": "Perfect for exploring ideas",
+        "features": [
+          "Access to curated idea database",
+          "Basic feasibility scores",
+          "Community discussions",
+          "Email support"
+        ],
+        "cta": "Get Started Free"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "₩99,000",
+        "period": "/month",
+        "description": "For serious entrepreneurs",
+        "features": [
+          "Everything in Free",
+          "Advanced AI swarm insights",
+          "Priority idea notifications",
+          "Custom adaptation reports",
+          "Phone support"
+        ],
+        "cta": "Start Pro Trial"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "description": "For large organizations",
+        "features": [
+          "Everything in Pro",
+          "Custom AI swarm training",
+          "Dedicated account manager",
+          "API access",
+          "White-label solutions"
+        ],
+        "cta": "Contact Sales"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Korean Entrepreneurs Say",
+    "subtitle": "Real success stories from our community",
+    "items": [
+      {
+        "name": "김민수",
+        "role": "Startup Founder",
+        "company": "TechFlow Korea",
+        "content": "Ideaoasis helped me discover a proven concept from Silicon Valley and adapt it perfectly for Korea. The AI insights were spot-on about local market nuances."
+      },
+      {
+        "name": "박지영",
+        "role": "Product Manager",
+        "company": "InnovateLab",
+        "content": "The Korean market adaptation features are incredible. I found a European fintech idea that's now thriving in Korea with local payment integrations."
+      },
+      {
+        "name": "이준호",
+        "role": "VC Partner",
+        "company": "Seoul Ventures",
+        "content": "As an investor, I appreciate how Ideaoasis validates global ideas for Korean market fit. It's become an essential tool for our due diligence."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Global Ideas?",
+    "subtitle": "Join thousands of Korean entrepreneurs discovering the next big opportunity",
+    "primaryCta": "Start Your Free Trial",
+    "secondaryCta": "Schedule a Demo"
+  },
+  "navigation": {
+    "home": "Home",
+    "ideas": "Ideas",
+    "about": "About",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "footer": {
+    "description": "Bridging global innovation to Korea's dynamic market",
+    "links": {
+      "product": "Product",
+      "company": "Company",
+      "support": "Support",
+      "legal": "Legal"
+    },
+    "copyright": "© 2024 Ideaoasis.co.kr. All rights reserved."
+  }
+} 
