@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
-    domains: [
-      'images.unsplash.com',
-      'via.placeholder.com',
-      'localhost',
-      'ideaoasis.co.kr',
-    ],
+    unoptimized: true,
   },
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY || 'default-key',
