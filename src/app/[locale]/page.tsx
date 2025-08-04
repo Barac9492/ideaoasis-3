@@ -6,6 +6,10 @@ import { PricingSection } from '@/components/sections/PricingSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { CTASection } from '@/components/sections/CTASection';
 
+export function generateStaticParams() {
+  return [{ locale: 'ko' }, { locale: 'en' }];
+}
+
 export default function HomePage() {
   const t = useTranslations();
 
