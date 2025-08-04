@@ -136,6 +136,24 @@
     "login": "로그인",
     "signup": "회원가입"
   },
+  "ideas": {
+    "title": "글로벌 아이디어 발견",
+    "subtitle": "전 세계에서 검증된 비즈니스 개념을 한국 시장에 맞게 적응시켜 탐색하세요",
+    "searchPlaceholder": "아이디어 검색...",
+    "allCountries": "모든 국가",
+    "noResults": "조건에 맞는 아이디어를 찾을 수 없습니다",
+    "categories": {
+      "all": "모든 카테고리",
+      "technology": "기술",
+      "fintech": "핀테크",
+      "ecommerce": "전자상거래",
+      "healthcare": "헬스케어",
+      "education": "교육",
+      "food": "식음료",
+      "transportation": "교통",
+      "entertainment": "엔터테인먼트"
+    }
+  },
   "footer": {
     "description": "글로벌 혁신을 한국의 역동적인 시장으로 연결",
     "links": {

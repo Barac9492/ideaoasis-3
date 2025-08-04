@@ -136,6 +136,24 @@
     "login": "Login",
     "signup": "Sign Up"
   },
+  "ideas": {
+    "title": "Discover Global Ideas",
+    "subtitle": "Explore proven business concepts from around the world, adapted for the Korean market",
+    "searchPlaceholder": "Search ideas...",
+    "allCountries": "All Countries",
+    "noResults": "No ideas found matching your criteria",
+    "categories": {
+      "all": "All Categories",
+      "technology": "Technology",
+      "fintech": "Fintech",
+      "ecommerce": "E-commerce",
+      "healthcare": "Healthcare",
+      "education": "Education",
+      "food": "Food & Beverage",
+      "transportation": "Transportation",
+      "entertainment": "Entertainment"
+    }
+  },
   "footer": {
     "description": "Bridging global innovation to Korea's dynamic market",
     "links": {
