@@ -1,1 +1,8 @@
+# Handle locale paths
+/ko    /ko/index.html   200
+/en    /en/index.html   200
+/ko/   /ko/index.html   200
+/en/   /en/index.html   200
+
+# Handle other paths
 /*    /index.html   200 
