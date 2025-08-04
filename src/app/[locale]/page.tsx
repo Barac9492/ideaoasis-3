@@ -1,9 +1,9 @@
-import KoreanFallbackPage from './page-fallback';
+import HomePageClient from './HomePageClient';
 
 export function generateStaticParams() {
   return [{ locale: 'ko' }, { locale: 'en' }];
 }
 
 export default function HomePage() {
-  return <KoreanFallbackPage />;
+  return <HomePageClient />;
 } 
