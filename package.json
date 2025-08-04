@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp public/_redirects out/_redirects && cp -r messages out/messages",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^3.3.2",
     "@langchain/community": "^0.0.20",
     "@langchain/openai": "^0.0.14",
+    "@netlify/plugin-nextjs": "^5.12.0",
     "@slack/web-api": "^6.10.0",
     "@stripe/stripe-js": "^2.4.0",
     "@supabase/auth-helpers-nextjs": "^0.8.7",

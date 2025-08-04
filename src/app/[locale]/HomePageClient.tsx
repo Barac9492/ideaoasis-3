@@ -35,6 +35,8 @@ export default function HomePageClient() {
   let t;
   try {
     t = useTranslations();
+    console.log('📝 Translations loaded:', t ? Object.keys(t).length : 'Failed');
+    console.log('🇰🇷 Hero title:', t ? t('hero.title') : 'Translation failed');
   } catch (error) {
     console.error('❌ Translation hook failed:', error);
     setTranslationsFailed(true);
