@@ -167,15 +167,15 @@ export class MasterAgent {
 
   private async decomposeTask(task: SwarmTask): Promise<SwarmTask[]> {
     // Simplified task decomposition without LangChain
-    const subtasks = [];
+    const subtasks: SwarmTask[] = [];
     
     if (task.type === 'idea_processing') {
       // Create subtasks for idea processing workflow
       subtasks.push({
         id: `${task.id}-subtask-0`,
-        type: 'sourcing',
+        type: 'idea_processing',
         status: 'pending' as const,
-        priority: 'medium',
+        priority: 'medium' as const,
         input: task.input,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -183,9 +183,9 @@ export class MasterAgent {
       
       subtasks.push({
         id: `${task.id}-subtask-1`,
-        type: 'scoring',
+        type: 'idea_processing',
         status: 'pending' as const,
-        priority: 'medium',
+        priority: 'medium' as const,
         input: task.input,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -193,9 +193,9 @@ export class MasterAgent {
       
       subtasks.push({
         id: `${task.id}-subtask-2`,
-        type: 'adaptation',
+        type: 'idea_processing',
         status: 'pending' as const,
-        priority: 'medium',
+        priority: 'medium' as const,
         input: task.input,
         createdAt: new Date(),
         updatedAt: new Date(),
