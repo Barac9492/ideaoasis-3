@@ -8,6 +8,10 @@
 [functions]
   directory = ".next/serverless"
 
+[[edge_functions]]
+  function = "middleware"
+  path = "/*"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

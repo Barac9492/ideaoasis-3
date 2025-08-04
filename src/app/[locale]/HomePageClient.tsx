@@ -27,10 +27,16 @@ const fallbackKoreanContent = {
   }
 };
 
-export default function HomePageClient() {
+interface HomePageClientProps {
+  locale: string;
+}
+
+export default function HomePageClient({ locale }: HomePageClientProps) {
   const [isHydrated, setIsHydrated] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [translationsFailed, setTranslationsFailed] = useState(false);
+
+  console.log('🏠 HomePageClient - received locale:', locale);
 
   let t;
   try {
@@ -45,10 +51,10 @@ export default function HomePageClient() {
 
   useEffect(() => {
     console.log('🏠 HomePageClient component mounted');
-    console.log('🌐 Current locale detected');
+    console.log('🌐 Current locale detected:', locale);
     console.log('📝 Hero title:', t ? t('hero.title') : 'Translation failed');
     setIsHydrated(true);
-  }, [t]);
+  }, [t, locale]);
 
   useEffect(() => {
     const handleError = (event: ErrorEvent) => {

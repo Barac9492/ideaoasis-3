@@ -4,8 +4,8 @@ import { Suspense } from 'react';
 import { Providers } from '@/components/providers/Providers';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 import '../globals.css';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default async function LocaleLayout({
   children,
@@ -15,22 +15,24 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   console.log('🔍 Layout loading for locale:', locale);
-  
+  console.log('🌐 Server-side locale detection:', locale);
+
   let messages;
   try {
     messages = await getMessages();
     console.log('📦 Messages loaded:', Object.keys(messages).length, 'keys');
     console.log('🇰🇷 Korean messages available:', 'hero' in messages);
+    console.log('🇰🇷 Hero title available:', messages.hero?.title);
   } catch (error) {
     console.error('❌ Failed to load messages:', error);
-    messages = {};
+    messages = {}; // Fallback to empty messages
   }
-  
+
   return (
     <html lang={locale}>
       <body>
         <ErrorBoundary>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             <Providers>
               <div className="min-h-screen flex flex-col">
                 <Header />
