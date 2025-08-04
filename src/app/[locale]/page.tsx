@@ -6,7 +6,8 @@ export function generateStaticParams() {
   return [{ locale: 'ko' }, { locale: 'en' }];
 }
 
-export default function HomePage({ params }: { params: { locale: string } }) {
-  console.log('🏠 HomePage server component - locale:', params.locale);
-  return <HomePageClient locale={params.locale} />;
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const resolvedParams = await params;
+  console.log('🏠 HomePage server component - locale:', resolvedParams.locale);
+  return <HomePageClient locale={resolvedParams.locale} />;
 } 

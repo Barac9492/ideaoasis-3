@@ -1,11 +1,9 @@
 import {notFound} from 'next/navigation';
 import {getRequestConfig} from 'next-intl/server';
 
-// Can be imported from a shared config
 const locales = ['ko', 'en'];
 
 export default getRequestConfig(async ({locale}) => {
-  // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
 
   try {
@@ -17,10 +15,22 @@ export default getRequestConfig(async ({locale}) => {
     };
   } catch (error) {
     console.error(`❌ Failed to load messages for ${locale}:`, error);
-    // Return empty messages object as fallback
-    return {
-      locale: locale!,
-      messages: {}
-    };
+    
+    // Try fallback to English
+    try {
+      const fallbackMessages = (await import(`../messages/en.json`)).default;
+      console.log(`🔄 Using fallback messages for ${locale}`);
+      return {
+        locale: locale!,
+        messages: fallbackMessages
+      };
+    } catch (fallbackError) {
+      console.error(`❌ Failed to load fallback messages:`, fallbackError);
+      // Return empty messages object as final fallback
+      return {
+        locale: locale!,
+        messages: {}
+      };
+    }
   }
 }); 
