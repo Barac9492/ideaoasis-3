@@ -1,6 +1,3 @@
-import { OpenAI } from '@langchain/openai';
-import { PromptTemplate } from '@langchain/core/prompts';
-import { LLMChain } from 'langchain/chains';
 import { 
   SwarmTask, 
   SwarmAgent
@@ -22,44 +19,32 @@ export class MasterAgent implements SwarmAgent {
     errorRate: 0,
   };
 
-  private llm: OpenAI;
-  private chain: LLMChain;
-
   constructor(apiKey: string) {
-    this.llm = new OpenAI({
-      openAIApiKey: apiKey,
-      temperature: 0.7,
-      modelName: 'gpt-4'
-    });
-
-    const prompt = PromptTemplate.fromTemplate(
-      `You are a master AI agent coordinating a swarm of specialized agents.
-      
-      Task: {task}
-      Context: {context}
-      
-      Analyze the task and provide strategic guidance for the swarm agents.
-      Focus on market adaptation, scalability, and innovation opportunities.
-      
-      Response:`
-    );
-
-    this.chain = new LLMChain({
-      llm: this.llm,
-      prompt: prompt
-    });
+    // Initialize with API key for future use
+    console.log('MasterAgent initialized with API key');
   }
 
   async process(task: SwarmTask): Promise<string> {
     try {
-      const result = await this.chain.invoke({
-        task: task.input?.description || 'No task description',
-        context: task.input?.context || 'No additional context provided'
-      });
-
-      return result.text;
+      const taskDescription = task.input?.description || 'No task description';
+      const context = task.input?.context || 'No additional context provided';
+      
+      // For now, return a simple response
+      // In the future, this can be enhanced with actual AI processing
+      const response = `Master Agent processed task: "${taskDescription}" with context: "${context}". 
+      
+      Strategic guidance: Focus on market adaptation and scalability opportunities. 
+      Consider local market conditions and cultural factors for successful implementation.`;
+      
+      // Update performance metrics
+      this.performanceMetrics.totalTasks++;
+      this.performanceMetrics.successfulTasks++;
+      this.lastActive = new Date();
+      
+      return response;
     } catch (error) {
       console.error('MasterAgent processing error:', error);
+      this.performanceMetrics.errorRate = (this.performanceMetrics.errorRate + 1) / this.performanceMetrics.totalTasks;
       return 'Error processing task with master agent';
     }
   }
