@@ -6,7 +6,27 @@
   "devCommand": "npm run dev",
   "functions": {
     "app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
+    },
+    "src/app/api/**/*.ts": {
+      "runtime": "nodejs20.x"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/ko"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
 } 
